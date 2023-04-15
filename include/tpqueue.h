@@ -17,7 +17,8 @@ struct SYM {
 template<typename T, const int size>
 class TPQueue {
    private:
-  T arr[size];
+  static const int s = size;
+  T arr[s];
   int first, last, count/*, prioriti*/;
   void Transportation(int index, const SYM& value) {
   int temp = first;
@@ -43,7 +44,7 @@ class TPQueue {
               continue;
             } else {
                 break;
-              }  
+              }
           }
               return pr;
             }
