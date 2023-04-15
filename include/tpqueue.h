@@ -61,7 +61,7 @@ public:
     if (isEmpty()) {
       arr[first] = value;
       ++count;
-      else {
+    } else {
         int index = SearchInd(value.GetPrior());
         Transportation(index, value);
         ++count;
