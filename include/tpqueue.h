@@ -3,20 +3,20 @@
 #define INCLUDE_TPQUEUE_H_
 
 struct SYM {
-   char ch;
-   int prior;
-  public:
-   char GetChar()const {
-     return ch;
-   }
-   int GetPrior() const {
-     return prior;
-   }
+  char ch;
+  int prior;
+   public:
+  char GetChar()const {
+    return ch;
+  }
+  int GetPrior() const {
+    return prior;
+  }
 };
 
 template<typename T, const int size>
 class TPQueue {
-  private:
+   private:
   T arr[size];
   int first, last, count/*, prioriti*/;
   void Transportation(int index, const SYM& value) {
@@ -41,16 +41,16 @@ class TPQueue {
             if (arr[i].GetPrior() < prior) {
               pr = i;
               continue;
-            } else
+            } else {
                 break;
-              }
+              }  
+          }
               return pr;
             }
   }
 
-
-public:
-  TPQueue() : first(0), last(0), count(0) {};
+   public:
+  TPQueue() : first(0), last(0), count(0) {}
   bool isEmpty()const {
     return count == 0;
   }
