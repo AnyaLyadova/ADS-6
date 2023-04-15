@@ -11,6 +11,7 @@ struct SYM {
   }
   int GetPrior() const {
     return prior;
+  }
 };
 
 template<typename T, int size>
@@ -37,14 +38,14 @@ class TPQueue {
       } else
         {
           int pr=last;
-			    for (int i = last; i >first; --i) {
-				    if (arr[i].GetPrior() < prior) {
-					  pr = i;
-					  continue;
+          for (int i = last; i >first; --i) {
+	    if (arr[i].GetPrior() < prior) {
+	      pr = i;
+              continue;
             } else
-					    break;
-			  }
-			return pr;
+	        break;
+	      }
+	      return pr;
 	    }
   }
 
@@ -58,9 +59,7 @@ public:
     return count == size;
   }
   void  push(const SYM& value) {
-    if (isFull())
-      throw std::string("Full");
-    else if (isEmpty()) {
+    if (isEmpty()) {
       arr[first] = value;
       ++count;
 		} else {
