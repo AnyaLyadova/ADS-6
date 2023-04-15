@@ -2,6 +2,17 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 
+struct SYM {
+  char ch;
+  int prior;
+  public:
+  char GetChar()const {
+    return ch;
+  }
+  int GetPrior() const {
+    return prior;
+};
+
 template<typename T, int size>
 class TPQueue {
   private:
@@ -71,17 +82,5 @@ public:
     return last;
   }
 };
-
-struct SYM {
-  char ch;
-  int prior;
-  public:
-  char GetChar()const {
-    return ch;
-  }
-  int GetPrior() const {
-    return prior;
-};
-
 
 #endif  // INCLUDE_TPQUEUE_H_
