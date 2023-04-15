@@ -3,18 +3,18 @@
 #define INCLUDE_TPQUEUE_H_
 
 struct SYM {
-  char ch;
-  int prior;
+   char ch;
+   int prior;
   public:
-  char GetChar()const {
-    return ch;
-  }
-  int GetPrior() const {
-    return prior;
-  }
+   char GetChar()const {
+     return ch;
+   }
+   int GetPrior() const {
+     return prior;
+   }
 };
 
-template<typename T, int size>
+template<typename T, const int size>
 class TPQueue {
   private:
   T arr[size];
@@ -28,25 +28,24 @@ class TPQueue {
   int in = index % size;
   arr[index] = value;
   last = (last + 1) % size;
-	}
+  }
 
   int SearchInd(int prior) {
     if (arr[first].GetPrior() < prior) {
       return first;
     } else if (arr[last].GetPrior() >= prior) {
         return (last + 1) % size;
-      } else
-        {
-          int pr=last;
+      } else {
+          int pr = last;
           for (int i = last; i >first; --i) {
-	    if (arr[i].GetPrior() < prior) {
-	      pr = i;
+            if (arr[i].GetPrior() < prior) {
+              pr = i;
               continue;
             } else
-	        break;
-	      }
-	      return pr;
-	    }
+                break;
+              }
+              return pr;
+            }
   }
 
 
@@ -62,12 +61,12 @@ public:
     if (isEmpty()) {
       arr[first] = value;
       ++count;
-		} else {
-			  int index = SearchInd(value.GetPrior());
-			  Transportation(index, value);
-		  	++count;
-		}
-	}
+      else {
+        int index = SearchInd(value.GetPrior());
+        Transportation(index, value);
+        ++count;
+      }
+    }
   T pop() {
     T temp = arr[first];
     first = (first + 1)%size;
