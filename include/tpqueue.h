@@ -68,7 +68,7 @@ public:
 		  	++count;
 		}
 	}
-  T& pop() {
+  T pop() {
     T temp = arr[first];
     first = (first + 1)%size;
     --count;
