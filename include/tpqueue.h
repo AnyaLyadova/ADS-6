@@ -50,7 +50,7 @@ class TPQueue {
   }
 
  public:
- TPQueue() :s(size), first(0), last(0), count(0) {
+  TPQueue() :s(size), first(0), last(0), count(0) {
       arr = new T[s+1];
   }
   ~TPQueue() {
