@@ -18,7 +18,7 @@ template<typename T, const int size>
 class TPQueue {
  private:
   static const int s = size;
-  T *arr;
+  T arr[s];
   int first, last, count/*, prioriti*/;
   void Transportation(int index, const SYM& value) {
   int temp = first;
@@ -53,9 +53,6 @@ class TPQueue {
  public:
   TPQueue() : first(0), last(0), count(0) {
     arr = new T[size];
-  }
-  ~TPQueue() {
-    delete[] arr;
   }
   bool isEmpty()const {
     return count == 0;
